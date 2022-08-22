@@ -3,13 +3,13 @@ on: [push]
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    name: Scan the webapplication
+    name: Scan the web application
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           ref: main
-      - name: ZAP Scan
+      - name: ZAP full Scan
         uses: zaproxy/action-full-scan@v0.4.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
